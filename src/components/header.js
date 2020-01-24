@@ -27,4 +27,4 @@ const Header = () => (
   </StyledHeader>
 )
 
-export default Header
+export default Header;

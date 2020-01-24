@@ -35,7 +35,7 @@ const BodyWrapper = styled.div`
 `;
 
 const Divider = styled.hr`
-  width: 90%;
+  width: 100%;
   margin: 25px auto;
   border: none;
 
