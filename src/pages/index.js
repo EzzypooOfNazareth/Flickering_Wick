@@ -19,10 +19,11 @@ const Container = styled.div`
 const HalfSplit = styled.div`
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 `;
 
 const ImageContainer = styled.div`
-  flex-basis: 48%;
+  flex-basis: 460px;
   float: left;
 `;
 
@@ -33,11 +34,12 @@ const SplitImage = styled.img`
 `;
 
 const SplitText = styled.div`
-  flex-basis: 48%;
+  flex-basis: 460px;
   float: right; 
   display: flex;
   flex-direction: column;
   align-items: start;
+  flex-wrap: wrap;
 `;
 
 const SplitHeader = styled.h2`
