@@ -80,6 +80,37 @@ const Divider = styled.hr`
   }
 `;
 
+const WholeBlock = styled.div`
+  width: 100%;
+`;
+
+const WholeImage = styled.img`
+  width: 100%;
+  height: auto;
+`;
+
+const ButtonWrap = styled.div`
+  position: relative;
+  width: 100%;
+  bottom: 100px;
+  text-align: center;
+`;
+
+const FloatingButton = styled(Link)`
+  padding: 10px 15px;
+  text-decoration: none;
+  background-color: darkred;
+  color: white;
+  transition: 0.2s ease;
+  font-size: 30px;
+
+  margin: 0 auto;
+
+  &:hover {
+    background-color: red;
+  }
+`;
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
@@ -106,6 +137,13 @@ const IndexPage = () => (
         </SplitText>
       </HalfSplit>
       <Divider />
+
+      <WholeBlock>
+        <WholeImage src={require('../images/flickeringwickimage.jpg')} />
+        <ButtonWrap>
+          <FloatingButton>Click Here</FloatingButton>
+        </ButtonWrap>
+      </WholeBlock>
     </Container>
   </Layout>
 );
