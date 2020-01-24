@@ -12,8 +12,6 @@ import "./fonts.css"
 
 import styled, { createGlobalStyle } from 'styled-components'
 
-import ImageBanner from './ImageBanner';
-
 const GlobalStyles = createGlobalStyle`
   body {
     padding: 0;
@@ -57,7 +55,6 @@ const Layout = ({ children }) => {
     <>
       <GlobalStyles />
       <Header />
-      <ImageBanner />
 
       <Divider />
 
