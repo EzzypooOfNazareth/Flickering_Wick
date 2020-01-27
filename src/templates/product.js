@@ -132,7 +132,7 @@ const ProductPage = ({ pageContext }) => (
                     <Fade bottom>
                         <ProductName>{pageContext.name}</ProductName>
                         <Desc dangerouslySetInnerHTML={{ __html: pageContext.description }} />
-                        <Price onSale={pageContext.on_sale}>$ {pageContext.prices.regular_price}.00 <SalePrice onSale={pageContext.on_sale}>${pageContext.prices.sale_price}.99</SalePrice></Price>
+                        <Price onSale={pageContext.on_sale}>${pageContext.prices.regular_price} <SalePrice onSale={pageContext.on_sale}>${pageContext.prices.sale_price}</SalePrice></Price>
                         <Desc>Quantity:</Desc>
                         <Input type="number" />
                         <BuyButton>Add to Cart</BuyButton>
