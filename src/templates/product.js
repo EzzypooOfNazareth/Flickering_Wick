@@ -75,14 +75,18 @@ const Price = styled.p`
   font-size: 24px;
   color: gray;
   margin: 0 0 25px 0;
+
+  font-weight: ${props => props.onSale ? 400 : 700};
+  text-decoration: ${props => props.onSale ? "line-through" : "none"};
 `;
 
 const SalePrice = styled.p`
   font-size: 28px;
-  color: red;
+  color: crimson;
   font-weight: bold;
-  display: inline-block;
   margin: 0 0 25px 0;
+
+  display: ${props => props.onSale ? "inline-block" : "none" }
 `;
 
 const Desc = styled.p`
@@ -128,7 +132,7 @@ const ProductPage = ({ pageContext }) => (
                     <Fade bottom>
                         <ProductName>{pageContext.name}</ProductName>
                         <Desc dangerouslySetInnerHTML={{ __html: pageContext.description }} />
-                        <Price><strike>$ {pageContext.prices.regular_price}.00</strike> <SalePrice>${pageContext.prices.sale_price}.99</SalePrice></Price>
+                        <Price onSale={pageContext.on_sale}>$ {pageContext.prices.regular_price}.00 <SalePrice onSale={pageContext.on_sale}>${pageContext.prices.sale_price}.99</SalePrice></Price>
                         <Desc>Quantity:</Desc>
                         <Input type="number" />
                         <BuyButton>Add to Cart</BuyButton>

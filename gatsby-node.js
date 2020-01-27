@@ -33,9 +33,10 @@ exports.createPages = async ({ graphql, actions }) => {
       allWordpressWcProducts {
         edges {
           node {
-            description
             id
             name
+            description
+            on_sale
             prices {
               regular_price
               sale_price
