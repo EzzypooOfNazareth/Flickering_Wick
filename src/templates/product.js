@@ -77,7 +77,7 @@ const Price = styled.p`
   margin: 0 0 25px 0;
 
   font-weight: ${props => props.onSale ? 400 : 700};
-  text-decoration: ${props => props.onSale ? "line-through" : "none"};
+  text-decoration: ${props => props.onSale ? "line-through" : "hidden"};
 `;
 
 const SalePrice = styled.p`
