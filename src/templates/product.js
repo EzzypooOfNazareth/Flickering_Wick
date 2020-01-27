@@ -50,6 +50,14 @@ const Divider = styled.hr`
   }
 `;
 
+const VertDivider = styled.div`
+  height: 380px;
+  width: 1px;
+  display: block;
+  background-color: black;
+  margin: auto 30px auto 0;
+`;
+
 const ProductName = styled.h1`
   font-size: 30px;
   color: #343333;
@@ -89,6 +97,12 @@ const BuyButton = styled.a`
   }
 `;
 
+const Input = styled.input`
+  width: 50px;
+  margin: 0 0 25px 0;
+  color: black;
+`;
+
 const ProductPage = ({ pageContext }) => (
     <Layout>
         <SEO title={`Products: ${pageContext.name}`} />
@@ -101,11 +115,13 @@ const ProductPage = ({ pageContext }) => (
                         <ProductImage src={`${pageContext.images[0].src.source_url}`} />
                     </Fade>
                 </Left>
+                <VertDivider />
                 <Right>
                     <Fade bottom>
                         <ProductName>{pageContext.name}</ProductName>
                         <Desc dangerouslySetInnerHTML={{ __html: pageContext.description }} />
                         <Price>$ {pageContext.prices.regular_price}</Price>
+                        <Input type="number" />
                         <BuyButton>Add to Cart</BuyButton>
                     </Fade>
                 </Right>
