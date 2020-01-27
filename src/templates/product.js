@@ -63,15 +63,30 @@ const ProductImage = styled.img`
 `;
 
 const Price = styled.p`
-  font-size: 26px;
+  font-size: 24px;
+  font-weight: bold;
   color: #343333;
-  margin: 0;
+  margin: 0 0 25px 0;
 `;
 
 const Desc = styled.p`
-  font-size: 14px;
-  color: black;
+  font-size: 16px;
+  color: gray;
+  font-style: italic;
   margin: 10px 0;
+`;
+
+const BuyButton = styled.a`
+  padding: 10px 25px;
+  text-decoration: none;
+  color: white;
+  background-color: darkred;
+  transition: 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+      background-color: red;
+  }
 `;
 
 const ProductPage = ({ pageContext }) => (
@@ -83,14 +98,15 @@ const ProductPage = ({ pageContext }) => (
             <Section>
                 <Left>
                     <Fade left>
-                        <ProductName>{pageContext.name}</ProductName>
                         <ProductImage src={`${pageContext.images[0].src.source_url}`} />
                     </Fade>
                 </Left>
                 <Right>
                     <Fade bottom>
-                        <Price>${pageContext.prices.regular_price}</Price>
+                        <ProductName>{pageContext.name}</ProductName>
                         <Desc dangerouslySetInnerHTML={{ __html: pageContext.description }} />
+                        <Price>$ {pageContext.prices.regular_price}</Price>
+                        <BuyButton>Add to Cart</BuyButton>
                     </Fade>
                 </Right>
             </Section>
