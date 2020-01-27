@@ -38,6 +38,7 @@ exports.createPages = async ({ graphql, actions }) => {
             name
             prices {
               regular_price
+              sale_price
             }
             images {
               src {

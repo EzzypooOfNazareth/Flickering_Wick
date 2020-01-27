@@ -19,6 +19,7 @@ const Section = styled.div`
     width: 100%;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: start;
     align-items: start;
 `;
@@ -72,8 +73,15 @@ const ProductImage = styled.img`
 
 const Price = styled.p`
   font-size: 24px;
+  color: gray;
+  margin: 0 0 25px 0;
+`;
+
+const SalePrice = styled.p`
+  font-size: 28px;
+  color: red;
   font-weight: bold;
-  color: #343333;
+  display: inline-block;
   margin: 0 0 25px 0;
 `;
 
@@ -120,7 +128,8 @@ const ProductPage = ({ pageContext }) => (
                     <Fade bottom>
                         <ProductName>{pageContext.name}</ProductName>
                         <Desc dangerouslySetInnerHTML={{ __html: pageContext.description }} />
-                        <Price>$ {pageContext.prices.regular_price}</Price>
+                        <Price><strike>$ {pageContext.prices.regular_price}.00</strike> <SalePrice>${pageContext.prices.sale_price}.99</SalePrice></Price>
+                        <Desc>Quantity:</Desc>
                         <Input type="number" />
                         <BuyButton>Add to Cart</BuyButton>
                     </Fade>
