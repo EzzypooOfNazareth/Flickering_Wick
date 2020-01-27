@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import Layout from "../components/PageLayout";
 import SEO from "../components/seo";
 
+import Fade from 'react-reveal';
+
 const Container = styled.div`
     width: 100%;
     display: flex;
@@ -80,17 +82,21 @@ const ProductPage = ({ pageContext }) => (
 
             <Section>
                 <Left>
-                    <ProductName>{pageContext.name}</ProductName>
-                    <ProductImage src={`${pageContext.images[0].src.source_url}`} />
+                    <Fade left>
+                        <ProductName>{pageContext.name}</ProductName>
+                        <ProductImage src={`${pageContext.images[0].src.source_url}`} />
+                    </Fade>
                 </Left>
                 <Right>
-                    <Price>${pageContext.prices.regular_price}</Price>
-                    <Desc dangerouslySetInnerHTML={{__html: pageContext.description}} />
+                    <Fade bottom>
+                        <Price>${pageContext.prices.regular_price}</Price>
+                        <Desc dangerouslySetInnerHTML={{ __html: pageContext.description }} />
+                    </Fade>
                 </Right>
             </Section>
             <Divider />
             <Section>
-            
+
             </Section>
 
         </Container>
