@@ -71,6 +71,7 @@ module.exports = {
           "**/taxonomies",
           "**/users",
           "**/menus",
+          "**/products",
         ],
         excludedRoutes: [],
         keepMediaSizes: false,

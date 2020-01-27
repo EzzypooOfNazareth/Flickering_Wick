@@ -27,7 +27,7 @@ const BodyContent = styled.p`
 
 const Post = ({ pageContext }) => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Post" />
     
     <StyledTitle dangerouslySetInnerHTML={{__html: pageContext.title}} />
     <BodyContent dangerouslySetInnerHTML={{__html: pageContext.content}} />

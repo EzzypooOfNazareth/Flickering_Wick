@@ -30,13 +30,30 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allWordpressWcProducts {
+        edges {
+          node {
+            description
+            id
+            name
+            prices {
+              regular_price
+            }
+            images {
+              src {
+                source_url
+              }
+            }
+          }
+        }
+      }
     }
   `)
   if (result.errors) {
     throw new Error(result.errors)
   }
 
-  const { allWordpressPage, allWordpressPost } = result.data
+  const { allWordpressPage, allWordpressPost, allWordpressWcProducts } = result.data
 
   const pageTemplate = path.resolve(`./src/templates/page.js`)
   allWordpressPage.edges.forEach(edge => {
@@ -52,6 +69,15 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: edge.node.path,
       component: slash(postTemplate),
+      context: edge.node,
+    })
+  })
+
+  const productTemplate = path.resolve(`./src/templates/product.js`)
+  allWordpressWcProducts.edges.forEach(edge => {
+    createPage({
+      path: `/products/${edge.node.id}`,
+      component: slash(productTemplate),
       context: edge.node,
     })
   })

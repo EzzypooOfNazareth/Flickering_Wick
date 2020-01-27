@@ -8,6 +8,7 @@ import NaviBar from './headerComponents/NaviBar';
 const StyledHeader = styled.div`
   width: 100%;
   background-color: white;
+  border-bottom: 1px solid gray;
 `;
 
 const HeaderInner = styled.div`

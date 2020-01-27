@@ -32,22 +32,6 @@ const BodyWrapper = styled.div`
   margin: 0 auto;
 `;
 
-const Divider = styled.hr`
-  width: 90%;
-  margin: 25px auto;
-  border: none;
-
-  &:before {
-    content: "";
-    height: 1.25px;
-    background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(147,147,147,1) 50%,rgba(0,0,0,0) 100%);
-
-    display: block;
-    margin-bottom: 10px;
-    margin-top: 10px;
-  }
-`;
-
 const Layout = ({ children }) => {
 
 
@@ -55,8 +39,6 @@ const Layout = ({ children }) => {
     <>
       <GlobalStyles />
       <Header />
-
-      <Divider />
 
       <BodyWrapper>
         <main>{children}</main>
